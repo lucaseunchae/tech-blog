@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .center-content {
+    @apply max-w-screen-md px-4 mx-auto md:px-8;
+  }
+}
