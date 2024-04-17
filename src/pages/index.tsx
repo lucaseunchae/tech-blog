@@ -4,9 +4,12 @@ import genPageTitle from 'utils/genPageTitle'
 export default function IndexPage() {
   return (
     <Layout>
-      <article className='center-content py-24 text-center break-keep'>
-        <h1 className='text-4xl font-bold mb-6'>안녕하세요. 김은채입니다.</h1>
-      </article>
+      <div className='relative flex justify-center items-center w-full sm:h-96 h-40'>
+        <img
+          src='images/banner-image.jpg'
+          className='w-full h-full object-cover'
+        />
+      </div>
     </Layout>
   )
 }

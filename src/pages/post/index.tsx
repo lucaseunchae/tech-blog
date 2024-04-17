@@ -11,13 +11,13 @@ export default function ({
   return (
     <Layout>
       <div className='center-content'>
-        <h1 className='text-4xl text-center font-bold mb-14'>Blog</h1>
+        <h1 className='text-4xl text-center font-bold mb-14'>Posts</h1>
         <ul className='flex flex-col gap-y-12'>
           {posts.map(({ node }) => {
             return (
               <BlogPostCard
                 img={node.frontmatter?.featuredimage ?? ''}
-                slug={node.fields?.slug ?? '/blog'}
+                slug={node.fields?.slug ?? '/post'}
                 title={node.frontmatter?.title ?? ''}
                 desc={node.frontmatter?.description ?? ''}
                 date={node.frontmatter?.date ?? ''}
@@ -33,7 +33,7 @@ export default function ({
 }
 
 export function Head() {
-  return <title>{genPageTitle('Blog')}</title>
+  return <title>{genPageTitle('Posts')}</title>
 }
 
 export const query = graphql`

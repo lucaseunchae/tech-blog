@@ -6,7 +6,7 @@ export default function ({ children }: { children: ReactNode }) {
   return (
     <div className='text-slate-950 transition-all'>
       <Header />
-      <main className='pt-14 pb-20'>{children}</main>
+      <main>{children}</main>
     </div>
   )
 }
