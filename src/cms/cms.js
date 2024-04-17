@@ -6,5 +6,5 @@ import BlogPostPreview from './preview-templates/blog-post-preview'
 CMS.init()
 
 CMS.registerPreviewStyle('preview.css')
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
+CMS.registerPreviewTemplate('post', BlogPostPreview)
 CMS.registerMediaLibrary(cloudinary)
