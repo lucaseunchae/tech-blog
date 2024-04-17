@@ -23,12 +23,12 @@ export default function ({
       <div className='flex-grow'>
         <Link to={slug} className='block mb-2'>
           <h2 className='text-xl font-bold line-clamp-1 mb-1'>{title}</h2>
-          <h3 className='text-md text-slate-700 line-clamp-2 dark:text-slate-200'>
+          <h3 className='text-md text-slate-700 line-clamp-2'>
             {desc}
           </h3>
         </Link>
         <div className='flex items-center gap-1 flex-wrap'>
-          <time className='text-md block text-slate-500 dark:text-slate-200'>
+          <time className='text-md block text-slate-500'>
             {date}
           </time>
           &middot;

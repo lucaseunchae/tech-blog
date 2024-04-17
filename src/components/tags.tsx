@@ -14,7 +14,7 @@ export default function ({
       {tags.map((tag, idx) => (
         <li
           key={idx}
-          className='text-base py-0.5 px-2 rounded-full bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-300'
+          className='text-base py-0.5 px-2 rounded-full bg-slate-100 text-slate-500'
         >
           {tag}
         </li>
