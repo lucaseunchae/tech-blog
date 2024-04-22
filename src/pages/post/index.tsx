@@ -10,9 +10,9 @@ export default function ({
 }: PageProps<Queries.BlogRollQuery>) {
   return (
     <Layout>
-      <div className='center-content'>
-        <h1 className='text-4xl text-center font-bold mb-14'>Posts</h1>
-        <ul className='flex flex-col gap-y-12'>
+      <div className='center-content py-10 md:py-20'>
+        <h1 className='text-4xl font-bold mb-14'>Post</h1>
+        <ul className='flex flex-col gap-y-8 md:gap-y-16'>
           {posts.map(({ node }) => {
             return (
               <BlogPostCard

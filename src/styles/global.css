@@ -4,6 +4,6 @@
 
 @layer utilities {
   .center-content {
-    @apply max-w-screen-md px-4 mx-auto md:px-8;
+    @apply max-w-screen-xl mx-auto px-8 md:px-14;
   }
 }

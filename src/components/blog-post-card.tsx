@@ -19,29 +19,28 @@ export default function ({
   tags: ReadonlyArray<string | null>
 } & HTMLAttributes<HTMLLIElement>) {
   return (
-    <li className='w-full flex gap-x-4' {...props}>
-      <div className='flex-grow'>
+    <li className='w-full flex gap-x-5 md:gap-x-8' {...props}>
+      <Link to={slug} className='w-20 md:w-52'>
+        <img
+          src={img}
+          className='w-full rounded-lg aspect-square object-cover'
+        />
+      </Link>
+
+      <div className='flex-1'>
+        <div className='flex flex-wrap items-center gap-3 mb-2'>
+          <time className='block text-xs font-bold text-gray-400'>{date}</time>
+          <Tags tags={tags.filter((tag) => tag !== null)} />
+        </div>
         <Link to={slug} className='block mb-2'>
-          <h2 className='text-xl font-bold line-clamp-1 mb-1'>{title}</h2>
-          <h3 className='text-md text-slate-700 line-clamp-2'>
+          <h2 className='text-lg md:text-3xl font-bold line-clamp-2'>
+            {title}
+          </h2>
+          <h3 className='hidden md:line-clamp-4 mt-4 text-md text-slate-700 '>
             {desc}
           </h3>
         </Link>
-        <div className='flex items-center gap-1 flex-wrap'>
-          <time className='text-md block text-slate-500'>
-            {date}
-          </time>
-          &middot;
-          <Tags tags={tags.filter((tag) => tag !== null)} />
-        </div>
       </div>
-
-      <Link to={slug} className='hidden md:block md:w-[180px] md:flex-shrink-0'>
-        <img
-          src={img}
-          className='w-full rounded-lg aspect-[3/2] object-cover'
-        />
-      </Link>
     </li>
   )
 }

@@ -12,10 +12,7 @@ export default function ({
   return (
     <ul className={clsx('flex gap-1.5 flex-wrap', className)} {...props}>
       {tags.map((tag, idx) => (
-        <li
-          key={idx}
-          className='text-base py-0.5 px-2 rounded-full bg-slate-100 text-slate-500'
-        >
+        <li key={idx} className='text-xs font-bold text-indigo-600'>
           {tag}
         </li>
       ))}
