@@ -1,6 +1,15 @@
 import Tags from 'components/tags'
 import { Link } from 'gatsby'
-import { HTMLAttributes } from 'react'
+
+export interface BlogPostCardProps {
+  key: string
+  img: string
+  slug: string
+  title: string
+  desc: string
+  date: string
+  tags: string[]
+}
 
 export default function ({
   img,
@@ -9,17 +18,9 @@ export default function ({
   desc,
   date,
   tags,
-  ...props
-}: {
-  img: string
-  slug: string
-  title: string
-  desc: string
-  date: string
-  tags: ReadonlyArray<string | null>
-} & HTMLAttributes<HTMLLIElement>) {
+}: BlogPostCardProps) {
   return (
-    <li className='w-full flex gap-x-5 md:gap-x-8' {...props}>
+    <li className='w-full flex gap-x-5 md:gap-x-8'>
       <Link to={slug} className='w-20 md:w-52'>
         <img
           src={img}
