@@ -1,5 +1,5 @@
 import Tags from 'components/tags'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 export interface BlogPostCardProps {
   key: string
@@ -45,3 +45,22 @@ export default function ({
     </li>
   )
 }
+
+export const blogPostCardFragment = graphql`
+  fragment BlogPostCard on MarkdownRemarkEdge {
+    node {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        description
+        templateKey
+        date(formatString: "MMM DD, YYYY")
+        featuredimage
+        tags
+      }
+    }
+  }
+`

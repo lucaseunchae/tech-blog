@@ -1,7 +1,7 @@
 import { BlogPostCardProps } from 'components/blog-post-card'
 
-export const processBlogPostPageQueryData = (
-  edges: Queries.BlogPostPageQuery['allMarkdownRemark']['edges']
+export const processBlogPostCardFragmentData = (
+  edges: ReadonlyArray<Queries.BlogPostCardFragment>
 ): BlogPostCardProps[] => {
   return edges.map(({ node }) => ({
     key: node.id,
