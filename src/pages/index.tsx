@@ -4,7 +4,7 @@ import genPageTitle from 'utils/genPageTitle'
 export default function IndexPage() {
   return (
     <Layout>
-      <div className='relative flex justify-center items-center w-full sm:h-96 h-40'>
+      <div className='relative flex justify-center items-center w-full h-[320px] sm:h-[560px]'>
         <img
           src='images/banner-image.jpg'
           className='w-full h-full object-cover'

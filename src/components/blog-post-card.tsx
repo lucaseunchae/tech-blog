@@ -30,11 +30,13 @@ export default function ({
 
       <div className='flex-1'>
         <div className='flex flex-wrap items-center gap-3 mb-2'>
-          <time className='block text-xs font-bold text-gray-400'>{date}</time>
+          <time className='block text-xs font-semibold text-gray-400'>
+            {date}
+          </time>
           <Tags tags={tags.filter((tag) => tag !== null)} />
         </div>
         <Link to={slug} className='block mb-2'>
-          <h2 className='text-lg md:text-3xl font-bold line-clamp-2'>
+          <h2 className='text-lg md:text-3xl font-semibold line-clamp-2'>
             {title}
           </h2>
           <h3 className='hidden md:line-clamp-4 mt-4 text-md text-slate-700 '>

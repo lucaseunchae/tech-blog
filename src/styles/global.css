@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-height: 3rem;
+  --md-header-height: 5rem;
+}
+
 @layer utilities {
   .center-content {
-    @apply max-w-screen-xl mx-auto px-8 md:px-14;
+    @apply max-w-screen-xl mx-auto px-4 md:px-14 py-6 md:py-16;
+  }
+  .page-title {
+    @apply text-2xl md:text-4xl font-bold mb-8 md:mb-14;
   }
 }

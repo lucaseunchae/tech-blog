@@ -11,8 +11,8 @@ export default function ({
 }: PageProps<Queries.BlogPostPageQuery>) {
   return (
     <Layout>
-      <div className='center-content py-10 md:py-20'>
-        <h1 className='text-4xl font-bold mb-14'>Post</h1>
+      <div className='center-content'>
+        <h1 className='page-title'>Post</h1>
         <BlogPostList posts={processBlogPostCardFragmentData(edges)} />
       </div>
     </Layout>
