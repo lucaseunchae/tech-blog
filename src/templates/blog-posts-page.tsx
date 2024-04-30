@@ -8,7 +8,7 @@ export default function ({
   data: {
     allMarkdownRemark: { edges },
   },
-}: PageProps<Queries.BlogPostPageQuery>) {
+}: PageProps<Queries.BlogPostsPageQuery>) {
   return (
     <Layout>
       <div className='center-content'>
@@ -24,10 +24,12 @@ export function Head() {
 }
 
 export const query = graphql`
-  query BlogPostPage {
+  query BlogPostsPage($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         ...BlogPostCard

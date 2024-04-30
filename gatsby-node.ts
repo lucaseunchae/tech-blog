@@ -9,9 +9,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }) => {
   const { createPage } = actions
 
-  const result = await graphql<Queries.PostQuery>(`
-    query Post {
-      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+  const result = await graphql<Queries.AllPostMetaDataQuery>(`
+    query AllPostMetaData {
+      allMarkdownRemark(
+        sort: { frontmatter: { date: DESC } }
+        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+        limit: 100000
+      ) {
         edges {
           node {
             id
@@ -19,7 +23,6 @@ export const createPages: GatsbyNode['createPages'] = async ({
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }
@@ -34,6 +37,22 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 
   const posts = result.data.allMarkdownRemark.edges
+
+  // create posts page(pagination)
+  const postsPerPage = 10
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/posts` : `/posts/${i + 1}`,
+      component: path.resolve('src/templates/blog-posts-page.tsx'),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
 
   // create post detail page
   posts.forEach((edge) => {

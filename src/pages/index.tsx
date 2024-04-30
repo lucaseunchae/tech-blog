@@ -32,10 +32,7 @@ export function Head() {
 
 export const query = graphql`
   query IndexPage {
-    allMarkdownRemark(
-      sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-    ) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         ...BlogPostCard
       }

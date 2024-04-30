@@ -18,11 +18,11 @@ export default function () {
           About
         </Link>
         <Link
-          to='/post'
+          to='/posts'
           className='flex items-center h-full px-4 md:px-8 hover:text-black'
           activeClassName='text-black font-medium'
         >
-          Post
+          Posts
         </Link>
       </nav>
     </header>
