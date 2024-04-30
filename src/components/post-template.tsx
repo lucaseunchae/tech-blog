@@ -26,17 +26,23 @@ export default function ({
 }: {
   content: string | ReactNode
   date: string
-  tags: ReadonlyArray<string | null>
+  tags: string[]
   title: string
 }) {
   return (
     <div className='center-content'>
-      <section className='text-center'>
-        <div className='text-xl font-light mb-3 text-slate-500'>
-          <time>{dayjs(date).format('MMM D, YYYY')}</time>
-          {tags && <> &mdash; {tags.join(', ')}</>}
-        </div>
-        <h1 className='text-4xl font-bold mb-20'>{title}</h1>
+      <section className='flex flex-col gap-4 mb-20 pb-8 border-b border-solid border-gray-200'>
+        <h1 className='text-5xl font-bold'>{title}</h1>
+        <time className='text-gray-400 font-medium'>
+          {dayjs(date).format('YYYY.MM.DD')}
+        </time>
+        <ul className='flex gap-6 flex-wrap'>
+          {tags.map((tag, idx) => (
+            <li key={idx} className='font-semibold text-indigo-600'>
+              #{tag}
+            </li>
+          ))}
+        </ul>
       </section>
       <MarkdownSection content={content} />
     </div>

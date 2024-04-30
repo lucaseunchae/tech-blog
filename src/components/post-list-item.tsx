@@ -1,4 +1,3 @@
-import Tags from 'components/tags'
 import { graphql, Link } from 'gatsby'
 
 export interface PostListItemProps {
@@ -32,7 +31,13 @@ export default function ({
             <time className='block text-xs font-semibold text-gray-400'>
               {date}
             </time>
-            <Tags tags={tags.filter((tag) => tag !== null)} />
+            <ul className='flex gap-1.5 flex-wrap'>
+              {tags.map((tag, idx) => (
+                <li key={idx} className='text-xs font-semibold text-indigo-600'>
+                  {tag}
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
             <h2 className='text-lg md:text-3xl font-semibold line-clamp-2'>
@@ -59,7 +64,7 @@ export const postListItemFragment = graphql`
         title
         description
         templateKey
-        date(formatString: "MMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
         featuredimage
         tags
       }
