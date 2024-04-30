@@ -12,7 +12,7 @@ export default function ({
   return (
     <Layout>
       <div className='center-content'>
-        <h1 className='page-title'>Post</h1>
+        <h1 className='page-title'>Posts</h1>
         <BlogPostList posts={processBlogPostCardFragmentData(edges)} />
       </div>
     </Layout>
