@@ -36,10 +36,13 @@ export default function ({
         <time className='text-gray-400 font-medium'>
           {dayjs(date).format('YYYY.MM.DD')}
         </time>
-        <ul className='flex gap-6 flex-wrap'>
+        <ul className='flex gap-3 flex-wrap'>
           {tags.map((tag, idx) => (
-            <li key={idx} className='font-semibold text-indigo-600'>
-              #{tag}
+            <li
+              key={idx}
+              className='px-2.5 py-1 rounded-xl bg-indigo-100 font-semibold text-indigo-600'
+            >
+              {tag}
             </li>
           ))}
         </ul>
