@@ -1,4 +1,3 @@
-import { HTMLContentRenderer } from 'components/content-renderer'
 import Layout from 'components/layout'
 import PostTemplate from 'components/post-template'
 import { graphql, HeadProps, PageProps } from 'gatsby'
@@ -13,7 +12,6 @@ export default function ({
       <PostTemplate
         content={post.html ?? ''}
         date={post.frontmatter?.date ?? ''}
-        contentComponent={HTMLContentRenderer}
         tags={post.frontmatter?.tags ?? ['프론트엔드']}
         title={post.frontmatter?.title ?? ''}
       />
