@@ -20,30 +20,30 @@ export default function ({
   tags,
 }: BlogPostCardProps) {
   return (
-    <li className='w-full flex gap-x-5 md:gap-x-8'>
-      <Link to={slug} className='w-20 md:w-52'>
+    <li>
+      <Link to={slug} className='flex gap-x-5 md:gap-x-8 w-full'>
         <img
           src={img}
-          className='w-full rounded-lg aspect-square object-cover'
+          className='w-20 md:w-52 rounded-lg aspect-square object-cover'
         />
-      </Link>
 
-      <div className='flex-1'>
-        <div className='flex flex-wrap items-center gap-3 mb-2'>
-          <time className='block text-xs font-semibold text-gray-400'>
-            {date}
-          </time>
-          <Tags tags={tags.filter((tag) => tag !== null)} />
+        <div className='flex-1'>
+          <div className='flex flex-wrap items-center gap-3 mb-2'>
+            <time className='block text-xs font-semibold text-gray-400'>
+              {date}
+            </time>
+            <Tags tags={tags.filter((tag) => tag !== null)} />
+          </div>
+          <div>
+            <h2 className='text-lg md:text-3xl font-semibold line-clamp-2'>
+              {title}
+            </h2>
+            <h3 className='hidden md:line-clamp-4 mt-4 text-md text-slate-700 '>
+              {desc}
+            </h3>
+          </div>
         </div>
-        <Link to={slug} className='block mb-2'>
-          <h2 className='text-lg md:text-3xl font-semibold line-clamp-2'>
-            {title}
-          </h2>
-          <h3 className='hidden md:line-clamp-4 mt-4 text-md text-slate-700 '>
-            {desc}
-          </h3>
-        </Link>
-      </div>
+      </Link>
     </li>
   )
 }
