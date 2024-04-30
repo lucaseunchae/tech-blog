@@ -1,7 +1,7 @@
 import Layout from 'components/layout'
 import PostList from 'components/post-list'
 import { graphql, PageProps } from 'gatsby'
-import { processPostCardFragmentData } from 'helpers/processQueryData'
+import { processPostListItemFragmentData } from 'helpers/processQueryData'
 import genPageTitle from 'utils/genPageTitle'
 
 export default function ({
@@ -13,7 +13,7 @@ export default function ({
     <Layout>
       <div className='center-content'>
         <h1 className='page-title'>Posts</h1>
-        <PostList posts={processPostCardFragmentData(edges)} />
+        <PostList posts={processPostListItemFragmentData(edges)} />
       </div>
     </Layout>
   )
@@ -32,7 +32,7 @@ export const query = graphql`
       skip: $skip
     ) {
       edges {
-        ...PostCard
+        ...PostListItem
       }
     }
   }

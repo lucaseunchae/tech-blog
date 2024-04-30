@@ -1,14 +1,14 @@
-import PostCard, { PostCardProps } from 'components/post-card'
+import PostListItem, { PostListItemProps } from 'components/post-list-item'
 
 export interface PostListProps {
-  posts: PostCardProps[]
+  posts: PostListItemProps[]
 }
 
 export default function ({ posts }: PostListProps) {
   return (
     <ul className='flex flex-col'>
       {posts.map((post) => (
-        <PostCard {...post} />
+        <PostListItem {...post} />
       ))}
     </ul>
   )
