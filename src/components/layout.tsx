@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 
+import Footer from './footer'
 import Header from './header'
 
 export default function ({ children }: { children: ReactNode }) {
@@ -7,6 +8,7 @@ export default function ({ children }: { children: ReactNode }) {
     <div className='pt-[--header-height] md:pt-[--md-header-height] text-slate-950 transition-all'>
       <Header />
       <main>{children}</main>
+      <Footer />
     </div>
   )
 }
