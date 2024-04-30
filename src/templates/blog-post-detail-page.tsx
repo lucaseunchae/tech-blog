@@ -6,7 +6,7 @@ import genPageTitle from 'utils/genPageTitle'
 
 export default function ({
   data: { markdownRemark: post },
-}: PageProps<Queries.BlogPostByIDQuery>) {
+}: PageProps<Queries.BlogPostDetailPageQuery>) {
   if (!post) return null
   return (
     <Layout>
@@ -21,13 +21,13 @@ export default function ({
   )
 }
 
-export function Head({ data }: HeadProps<Queries.BlogPostByIDQuery>) {
+export function Head({ data }: HeadProps<Queries.BlogPostDetailPageQuery>) {
   const postTitle = data.markdownRemark?.frontmatter?.title
   return <title>{genPageTitle(postTitle)}</title>
 }
 
 export const query = graphql`
-  query BlogPostByID($id: String!) {
+  query BlogPostDetailPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
