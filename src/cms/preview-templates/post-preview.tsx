@@ -1,6 +1,6 @@
-import BlogPostTemplate from '../../components/blog-post-template'
+import PostTemplate from '../../components/post-template'
 
-export default function BlogPostPreview({
+export default function PostPreview({
   entry,
   widgetFor,
 }: {
@@ -10,7 +10,7 @@ export default function BlogPostPreview({
   const data = entry.getIn(['data']).toJS()
   return (
     <div className='py-12 px-6'>
-      <BlogPostTemplate
+      <PostTemplate
         content={widgetFor('body') ?? <></>}
         date={new Date(data.date).toLocaleDateString()}
         tags={data.tags}

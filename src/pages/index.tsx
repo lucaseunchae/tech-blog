@@ -1,7 +1,7 @@
-import BlogPostList from 'components/blog-post-list'
 import Layout from 'components/layout'
+import PostList from 'components/post-list'
 import { graphql, PageProps } from 'gatsby'
-import { processBlogPostCardFragmentData } from 'helpers/processQueryData'
+import { processPostCardFragmentData } from 'helpers/processQueryData'
 import genPageTitle from 'utils/genPageTitle'
 
 export default function IndexPage({
@@ -20,7 +20,7 @@ export default function IndexPage({
 
       <div className='center-content'>
         <h1 className='page-title'>Posts</h1>
-        <BlogPostList posts={processBlogPostCardFragmentData(edges)} />
+        <PostList posts={processPostCardFragmentData(edges)} />
       </div>
     </Layout>
   )
@@ -34,7 +34,7 @@ export const query = graphql`
   query IndexPage {
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
-        ...BlogPostCard
+        ...PostCard
       }
     }
   }

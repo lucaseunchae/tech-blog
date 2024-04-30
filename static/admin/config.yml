@@ -27,7 +27,7 @@ collections:
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'blog-post',
+          default: 'post',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - label: 'Body'

@@ -1,8 +1,8 @@
-import { BlogPostCardProps } from 'components/blog-post-card'
+import { PostCardProps } from 'components/post-card'
 
-export const processBlogPostCardFragmentData = (
-  edges: ReadonlyArray<Queries.BlogPostCardFragment>
-): BlogPostCardProps[] => {
+export const processPostCardFragmentData = (
+  edges: ReadonlyArray<Queries.PostCardFragment>
+): PostCardProps[] => {
   return edges.map(({ node }) => ({
     key: node.id,
     img: node.frontmatter!.featuredimage!,

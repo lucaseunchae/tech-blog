@@ -13,7 +13,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     query AllPostMetaData {
       allMarkdownRemark(
         sort: { frontmatter: { date: DESC } }
-        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+        filter: { frontmatter: { templateKey: { eq: "post" } } }
         limit: 100000
       ) {
         edges {
@@ -44,7 +44,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/posts` : `/posts/${i + 1}`,
-      component: path.resolve('src/templates/blog-posts-page.tsx'),
+      component: path.resolve('src/templates/posts-page.tsx'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
@@ -59,7 +59,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     const id = edge.node.id
     createPage({
       path: edge.node.fields!.slug!,
-      component: path.resolve('src/templates/blog-post-detail-page.tsx'),
+      component: path.resolve('src/templates/post-detail-page.tsx'),
       context: {
         id,
       },

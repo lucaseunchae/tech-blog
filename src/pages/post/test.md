@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: title
 description: description
 tags:

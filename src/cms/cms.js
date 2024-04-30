@@ -1,10 +1,10 @@
 import CMS from 'decap-cms-app'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
 
-import BlogPostPreview from './preview-templates/blog-post-preview'
+import PostPreview from './preview-templates/post-preview'
 
 CMS.init()
 
 CMS.registerPreviewStyle('preview.css')
-CMS.registerPreviewTemplate('post', BlogPostPreview)
+CMS.registerPreviewTemplate('post', PostPreview)
 CMS.registerMediaLibrary(cloudinary)

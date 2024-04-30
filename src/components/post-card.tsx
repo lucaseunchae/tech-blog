@@ -1,7 +1,7 @@
 import Tags from 'components/tags'
 import { graphql, Link } from 'gatsby'
 
-export interface BlogPostCardProps {
+export interface PostCardProps {
   key: string
   img: string
   slug: string
@@ -18,7 +18,7 @@ export default function ({
   desc,
   date,
   tags,
-}: BlogPostCardProps) {
+}: PostCardProps) {
   return (
     <li>
       <Link to={slug} className='flex gap-x-5 md:gap-x-8 w-full py-4 md:py-8'>
@@ -48,8 +48,8 @@ export default function ({
   )
 }
 
-export const blogPostCardFragment = graphql`
-  fragment BlogPostCard on MarkdownRemarkEdge {
+export const postCardFragment = graphql`
+  fragment PostCard on MarkdownRemarkEdge {
     node {
       id
       fields {

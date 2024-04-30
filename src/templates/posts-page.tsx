@@ -1,19 +1,19 @@
-import BlogPostList from 'components/blog-post-list'
 import Layout from 'components/layout'
+import PostList from 'components/post-list'
 import { graphql, PageProps } from 'gatsby'
-import { processBlogPostCardFragmentData } from 'helpers/processQueryData'
+import { processPostCardFragmentData } from 'helpers/processQueryData'
 import genPageTitle from 'utils/genPageTitle'
 
 export default function ({
   data: {
     allMarkdownRemark: { edges },
   },
-}: PageProps<Queries.BlogPostsPageQuery>) {
+}: PageProps<Queries.PostsPageQuery>) {
   return (
     <Layout>
       <div className='center-content'>
         <h1 className='page-title'>Posts</h1>
-        <BlogPostList posts={processBlogPostCardFragmentData(edges)} />
+        <PostList posts={processPostCardFragmentData(edges)} />
       </div>
     </Layout>
   )
@@ -24,15 +24,15 @@ export function Head() {
 }
 
 export const query = graphql`
-  query BlogPostsPage($skip: Int!, $limit: Int!) {
+  query PostsPage($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { frontmatter: { templateKey: { eq: "post" } } }
       limit: $limit
       skip: $skip
     ) {
       edges {
-        ...BlogPostCard
+        ...PostCard
       }
     }
   }
