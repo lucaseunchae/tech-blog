@@ -21,7 +21,7 @@ export default function ({
 }: BlogPostCardProps) {
   return (
     <li>
-      <Link to={slug} className='flex gap-x-5 md:gap-x-8 w-full'>
+      <Link to={slug} className='flex gap-x-5 md:gap-x-8 w-full py-4 md:py-8'>
         <img
           src={img}
           className='w-20 md:w-52 rounded-lg aspect-square object-cover'

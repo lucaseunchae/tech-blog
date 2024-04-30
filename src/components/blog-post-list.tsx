@@ -6,7 +6,7 @@ export interface BlogPostListProps {
 
 export default function ({ posts }: BlogPostListProps) {
   return (
-    <ul className='flex flex-col gap-y-8 md:gap-y-16'>
+    <ul className='flex flex-col'>
       {posts.map((post) => (
         <BlogPostCard {...post} />
       ))}
