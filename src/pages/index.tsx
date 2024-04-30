@@ -1,7 +1,7 @@
 import Layout from 'components/layout'
 import PostList from 'components/post-list'
 import { graphql, PageProps } from 'gatsby'
-import { processPostListItemFragmentData } from 'helpers/processQueryData'
+import { processPostListData } from 'helpers/processQueryData'
 import genPageTitle from 'utils/genPageTitle'
 
 export default function IndexPage({
@@ -20,7 +20,7 @@ export default function IndexPage({
 
       <div className='center-content'>
         <h1 className='page-title'>Posts</h1>
-        <PostList posts={processPostListItemFragmentData(edges)} />
+        <PostList posts={processPostListData(edges)} />
       </div>
     </Layout>
   )

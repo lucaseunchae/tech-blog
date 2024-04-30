@@ -1,6 +1,6 @@
 import { PostListItemProps } from 'components/post-list-item'
 
-export const processPostListItemFragmentData = (
+export const processPostListData = (
   edges: ReadonlyArray<Queries.PostListItemFragment>
 ): PostListItemProps[] => {
   return edges.map(({ node }) => ({
