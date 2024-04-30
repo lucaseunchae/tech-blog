@@ -13,7 +13,7 @@ export default function PostPreview({
       <PostTemplate
         content={widgetFor('body') ?? <></>}
         date={new Date(data.date).toLocaleDateString()}
-        tags={data.tags}
+        tags={data.tags || []}
         title={data.title}
       />
     </div>
