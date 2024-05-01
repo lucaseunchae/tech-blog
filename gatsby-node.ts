@@ -42,15 +42,15 @@ export const createPages: GatsbyNode['createPages'] = async ({
   // create posts page(pagination)
   const postsPerPage = 10
   const totalPosts = posts.length
-  const totalPage = Math.ceil(totalPosts / postsPerPage)
-  Array.from({ length: totalPage }).forEach((_, i) => {
+  const totalPages = Math.ceil(totalPosts / postsPerPage)
+  Array.from({ length: totalPages }).forEach((_, i) => {
     createPage<PaginationContext>({
       path: i === 0 ? `/posts` : `/posts/${i + 1}`,
       component: path.resolve('src/templates/posts-page.tsx'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
-        totalPage,
+        totalPages,
         currentPage: i + 1,
         totalElements: totalPosts
       },
@@ -64,7 +64,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     context: {
       limit: postsPerPage,
       skip: 0,
-      totalPage,
+      totalPages,
       currentPage: 1,
       totalElements: totalPosts
     },

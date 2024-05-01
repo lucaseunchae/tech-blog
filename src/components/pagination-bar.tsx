@@ -5,11 +5,11 @@ import RightArrowIcon from 'components/icons/right-arrow-icon'
 import { navigate } from 'gatsby'
 import { PaginationContext } from 'model/utils'
 
-export default function ({ totalPage, currentPage }: PaginationContext) {
+export default function ({ totalPages, currentPage }: PaginationContext) {
   const PAGE_ITEM_COUNT = 5 // [6] [7] [8] [9] [10] 과 같이 PaginationBar가 보여줄 page item의 수
   const startPage =
     PAGE_ITEM_COUNT * Math.floor(currentPage / (PAGE_ITEM_COUNT + 1)) + 1
-  const endPage = Math.min(startPage + PAGE_ITEM_COUNT - 1, totalPage)
+  const endPage = Math.min(startPage + PAGE_ITEM_COUNT - 1, totalPages)
 
   function handleClickDoubleLeftArrowButton(
     event: React.MouseEvent<HTMLButtonElement>
@@ -50,7 +50,7 @@ export default function ({ totalPage, currentPage }: PaginationContext) {
     if (event.currentTarget.disabled) {
       return
     }
-    navigate(`/posts/${totalPage}`)
+    navigate(`/posts/${totalPages}`)
   }
 
   const moveButtonClassName =
@@ -88,14 +88,14 @@ export default function ({ totalPage, currentPage }: PaginationContext) {
       <button
         onClick={handleClickRightArrowButton}
         className={moveButtonClassName}
-        disabled={startPage + PAGE_ITEM_COUNT > totalPage}
+        disabled={startPage + PAGE_ITEM_COUNT > totalPages}
       >
         <RightArrowIcon className={moveButtonIconClassName} />
       </button>
       <button
         onClick={handleClickDoubleRightArrowButton}
         className={moveButtonClassName}
-        disabled={currentPage === totalPage}
+        disabled={currentPage === totalPages}
       >
         <DoubleRightArrowIcon className={moveButtonIconClassName} />
       </button>

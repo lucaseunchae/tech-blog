@@ -1,7 +1,7 @@
 export interface PaginationContext {
   limit: number
   skip: number
-  totalPage: number
+  totalPages: number
   currentPage: number
   totalElements: number
 }
