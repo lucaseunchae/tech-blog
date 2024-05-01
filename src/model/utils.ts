@@ -3,4 +3,5 @@ export interface PaginationContext {
   skip: number
   totalPage: number
   currentPage: number
+  totalElements: number
 }

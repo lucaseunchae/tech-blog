@@ -22,7 +22,7 @@ export default function ({
       </div>
 
       <div className='center-content'>
-        <h1 className='page-title'>Posts</h1>
+        <h1 className='page-title'>Posts({pageContext.totalElements})</h1>
         <PostList posts={processPostListData(edges)} />
         <PaginationBar {...pageContext} />
       </div>

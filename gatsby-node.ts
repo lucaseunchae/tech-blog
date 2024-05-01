@@ -41,7 +41,8 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   // create posts page(pagination)
   const postsPerPage = 10
-  const totalPage = Math.ceil(posts.length / postsPerPage)
+  const totalPosts = posts.length
+  const totalPage = Math.ceil(totalPosts / postsPerPage)
   Array.from({ length: totalPage }).forEach((_, i) => {
     createPage<PaginationContext>({
       path: i === 0 ? `/posts` : `/posts/${i + 1}`,
@@ -51,6 +52,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
         skip: i * postsPerPage,
         totalPage,
         currentPage: i + 1,
+        totalElements: totalPosts
       },
     })
   })
@@ -64,6 +66,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
       skip: 0,
       totalPage,
       currentPage: 1,
+      totalElements: totalPosts
     },
   })
 
