@@ -19,11 +19,11 @@ export default function ({
   tags,
 }: PostListItemProps) {
   return (
-    <li>
+    <li className='border-b border-solid border-gray-200'>
       <Link to={slug} className='flex gap-x-5 md:gap-x-8 w-full py-4 md:py-8'>
         <img
           src={img}
-          className='w-20 md:w-52 rounded-lg aspect-square object-cover'
+          className='w-24 md:w-52 rounded-lg aspect-square object-cover'
         />
 
         <div className='flex-1'>
@@ -43,7 +43,7 @@ export default function ({
             <h2 className='text-lg md:text-3xl font-semibold line-clamp-2'>
               {title}
             </h2>
-            <h3 className='hidden md:line-clamp-4 mt-4 text-md text-slate-700 '>
+            <h3 className='line-clamp-2 md:line-clamp-4 mt-1 md:mt-4 text-sm md:text-base text-slate-700 '>
               {desc}
             </h3>
           </div>
