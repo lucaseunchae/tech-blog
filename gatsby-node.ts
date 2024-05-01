@@ -1,6 +1,7 @@
 import type { GatsbyNode } from 'gatsby'
 import { createFilePath } from 'gatsby-source-filesystem'
 import { GraphQLError } from 'graphql'
+import { PaginationContext } from 'model/utils'
 import path from 'path'
 
 export const createPages: GatsbyNode['createPages'] = async ({
@@ -40,18 +41,30 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   // create posts page(pagination)
   const postsPerPage = 10
-  const numPages = Math.ceil(posts.length / postsPerPage)
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
+  const totalPage = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: totalPage }).forEach((_, i) => {
+    createPage<PaginationContext>({
       path: i === 0 ? `/posts` : `/posts/${i + 1}`,
       component: path.resolve('src/templates/posts-page.tsx'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
-        numPages,
+        totalPage,
         currentPage: i + 1,
       },
     })
+  })
+
+  // create home page
+  createPage<PaginationContext>({
+    path: '/',
+    component: path.resolve('src/templates/home-page.tsx'),
+    context: {
+      limit: postsPerPage,
+      skip: 0,
+      totalPage,
+      currentPage: 1,
+    },
   })
 
   // create post detail page

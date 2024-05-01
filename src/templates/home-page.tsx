@@ -1,14 +1,17 @@
+import PaginationBar from 'components/pagination-bar'
 import PostList from 'components/posts/post-list'
 import { graphql, PageProps } from 'gatsby'
 import { processPostListData } from 'helpers/processQueryData'
+import { PaginationContext } from 'model/utils'
 import generatePageTitle from 'utils/generatePageTitle'
 import Layout from 'widgets/layout'
 
-export default function IndexPage({
+export default function ({
   data: {
     allMarkdownRemark: { edges },
   },
-}: PageProps<Queries.IndexPageQuery>) {
+  pageContext,
+}: PageProps<Queries.HomePageQuery, PaginationContext>) {
   return (
     <Layout>
       <div className='relative flex justify-center items-center w-full h-[320px] sm:h-[560px]'>
@@ -21,6 +24,7 @@ export default function IndexPage({
       <div className='center-content'>
         <h1 className='page-title'>Posts</h1>
         <PostList posts={processPostListData(edges)} />
+        <PaginationBar {...pageContext} />
       </div>
     </Layout>
   )
@@ -31,10 +35,12 @@ export function Head() {
 }
 
 export const query = graphql`
-  query IndexPage {
+  query HomePage($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { templateKey: { eq: "post" } } }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         ...PostListItem
