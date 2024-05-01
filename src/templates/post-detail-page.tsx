@@ -1,8 +1,8 @@
 import PostTemplate from 'components/posts/post-template'
+import Layout from 'components/widgets/layout'
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { processPostTempleteData } from 'helpers/processQueryData'
 import generatePageTitle from 'utils/generatePageTitle'
-import Layout from 'widgets/layout'
 
 export default function ({
   data: { markdownRemark: post },

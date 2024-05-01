@@ -1,10 +1,10 @@
 import PaginationBar from 'components/pagination-bar'
 import PostList from 'components/posts/post-list'
+import Layout from 'components/widgets/layout'
 import { graphql, PageProps } from 'gatsby'
 import { processPostListData } from 'helpers/processQueryData'
 import { PaginationContext } from 'model/utils'
 import generatePageTitle from 'utils/generatePageTitle'
-import Layout from 'widgets/layout'
 
 export default function ({
   data: {
