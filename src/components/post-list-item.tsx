@@ -31,7 +31,7 @@ export default function ({
             <time className='block text-xs font-semibold text-gray-400'>
               {date}
             </time>
-            <ul className='flex gap-1.5 flex-wrap'>
+            <ul className='flex gap-2 flex-wrap'>
               {tags.map((tag, idx) => (
                 <li key={idx} className='text-xs font-semibold text-indigo-600'>
                   {tag}
