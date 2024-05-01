@@ -1,4 +1,6 @@
-import PostListItem, { PostListItemProps } from 'components/post-list-item'
+import PostListItem, {
+  PostListItemProps,
+} from 'components/posts/post-list-item'
 
 export interface PostListProps {
   posts: PostListItemProps[]

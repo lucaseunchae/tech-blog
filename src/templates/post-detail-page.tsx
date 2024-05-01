@@ -1,8 +1,8 @@
-import Layout from 'components/layout'
-import PostTemplate from 'components/post-template'
+import PostTemplate from 'components/posts/post-template'
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { processPostTempleteData } from 'helpers/processQueryData'
-import genPageTitle from 'utils/genPageTitle'
+import generatePageTitle from 'utils/generatePageTitle'
+import Layout from 'widgets/layout'
 
 export default function ({
   data: { markdownRemark: post },
@@ -15,8 +15,8 @@ export default function ({
 }
 
 export function Head({ data }: HeadProps<Queries.PostDetailPageQuery>) {
-  const postTitle = data.markdownRemark?.frontmatter?.title
-  return <title>{genPageTitle(postTitle)}</title>
+  const postTitle = data.markdownRemark!.frontmatter!.title!
+  return <title>{generatePageTitle(postTitle)}</title>
 }
 
 export const query = graphql`

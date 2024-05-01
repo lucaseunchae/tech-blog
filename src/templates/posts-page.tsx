@@ -1,8 +1,8 @@
-import Layout from 'components/layout'
-import PostList from 'components/post-list'
+import PostList from 'components/posts/post-list'
 import { graphql, PageProps } from 'gatsby'
 import { processPostListData } from 'helpers/processQueryData'
-import genPageTitle from 'utils/genPageTitle'
+import generatePageTitle from 'utils/generatePageTitle'
+import Layout from 'widgets/layout'
 
 export default function ({
   data: {
@@ -20,7 +20,7 @@ export default function ({
 }
 
 export function Head() {
-  return <title>{genPageTitle('Posts')}</title>
+  return <title>{generatePageTitle('Posts')}</title>
 }
 
 export const query = graphql`

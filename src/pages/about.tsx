@@ -1,10 +1,10 @@
-import Layout from 'components/layout'
-import genPageTitle from 'utils/genPageTitle'
+import generatePageTitle from 'utils/generatePageTitle'
+import Layout from 'widgets/layout'
 
 export default function AboutPage() {
   return <Layout>about</Layout>
 }
 
 export function Head() {
-  return <title>{genPageTitle('About')}</title>
+  return <title>{generatePageTitle('About')}</title>
 }

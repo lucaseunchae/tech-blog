@@ -1,6 +1,6 @@
 import { Link, PageProps } from 'gatsby'
 import * as React from 'react'
-import genPageTitle from 'utils/genPageTitle'
+import generatePageTitle from 'utils/generatePageTitle'
 
 const pageStyles = {
   color: '#232129',
@@ -48,5 +48,5 @@ const NotFoundPage: React.FC<PageProps> = () => {
 export default NotFoundPage
 
 export function Head() {
-  return <title>{genPageTitle('Not Found')}</title>
+  return <title>{generatePageTitle('Not Found')}</title>
 }
