@@ -18,17 +18,14 @@ function MarkdownSection({ content }: { content: string | ReactNode }) {
   )
 }
 
-export default function ({
-  content,
-  date,
-  tags,
-  title,
-}: {
+export interface PostTempleteProps {
   content: string | ReactNode
   date: string
   tags: string[]
   title: string
-}) {
+}
+
+export default function ({ content, date, tags, title }: PostTempleteProps) {
   return (
     <div className='center-content'>
       <section className='flex flex-col gap-4 mb-20 pb-8 border-b border-solid border-gray-200'>

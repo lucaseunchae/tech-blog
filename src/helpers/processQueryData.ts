@@ -1,4 +1,5 @@
 import { PostListItemProps } from 'components/post-list-item'
+import { PostTempleteProps } from 'components/post-template'
 
 export const processPostListData = (
   edges: ReadonlyArray<Queries.PostListItemFragment>
@@ -12,4 +13,15 @@ export const processPostListData = (
     date: node.frontmatter!.date!,
     tags: node.frontmatter!.tags as string[],
   }))
+}
+
+export const processPostTempleteData = (
+  post: Queries.PostDetailPageQuery['markdownRemark']
+): PostTempleteProps => {
+  return {
+    content: post!.html!,
+    date: post!.frontmatter!.date!,
+    tags: post!.frontmatter!.tags as string[],
+    title: post!.frontmatter!.title!,
+  }
 }
