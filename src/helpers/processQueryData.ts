@@ -20,6 +20,7 @@ export const processPostTempleteData = (
 ): PostTempleteProps => {
   return {
     content: post!.html!,
+    tableOfContents: post!.tableOfContents!,
     date: post!.frontmatter!.date!,
     tags: post!.frontmatter!.tags as string[],
     title: post!.frontmatter!.title!,

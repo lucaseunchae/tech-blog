@@ -6,12 +6,46 @@
   --header-height: 3rem;
   --md-header-height: 5rem;
 }
+.markdown {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    scroll-margin-top: var(--md-header-height);
+  }
+}
 
 @layer utilities {
   .center-content {
-    @apply max-w-screen-xl mx-auto px-4 md:px-14 py-6 md:py-16;
+    @apply max-w-screen-xl mx-auto px-4 py-6 md:py-16;
   }
   .page-title {
     @apply text-2xl md:text-4xl font-bold mb-8 md:mb-14;
+  }
+
+  /* TOC */
+  .table-of-contents {
+    @apply absolute top-20 right-[-10px];
+    /*
+    Tailwind로 hidden을 사용하면 DOM에 잡히지 않아서
+    TOC scroll event가 적용되지 않기에 media query로 구현
+    */
+    @media (max-width: 1280px) {
+      display: none;
+    }
+  }
+  .table-of-contents > div {
+    @apply fixed max-w-xs;
+  }
+  .table-of-contents ul {
+    @apply pl-6;
+  }
+  .table-of-contents a {
+    @apply text-gray-400 leading-8;
+  }
+  .table-of-contents a.active {
+    @apply text-indigo-600 font-bold;
   }
 }
