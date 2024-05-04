@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 
 export default function () {
   return (
-    <header className='z-10 fixed top-0 flex items-center justify-between w-full h-[--header-height] md:h-[--md-header-height] border-b border-solid border-gray-200 bg-white transition-[top] duration-300'>
+    <header className='z-10 fixed top-0 flex items-center justify-between w-full h-[--header-height] md:h-[--md-header-height] border-b border-solid border-gray-200 bg-white transition-all duration-700'>
       <Link
         to='/'
         className='flex items-center h-full px-4 md:px-8 text-lg md:text-2xl font-semibold'
