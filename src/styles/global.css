@@ -17,6 +17,20 @@
   }
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #a1a1a1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #676767;
+}
+
 @layer utilities {
   .center-content {
     @apply max-w-screen-xl mx-auto px-4 py-6 md:py-16;
