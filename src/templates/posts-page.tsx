@@ -1,5 +1,6 @@
 import PaginationBar from 'components/pagination-bar'
 import PostList from 'components/posts/post-list'
+import TagNavigationSidebar from 'components/tag-navigation-sidebar'
 import Layout from 'components/widgets/layout'
 import { graphql, PageProps } from 'gatsby'
 import { processPostListData } from 'helpers/processQueryData'
@@ -14,6 +15,7 @@ export default function ({
 }: PageProps<Queries.PostsPageQuery, PaginationContext>) {
   return (
     <Layout>
+      <TagNavigationSidebar />
       <div className='center-content'>
         <h1 className='page-title'>Posts({pageContext.totalElements})</h1>
         <PostList posts={processPostListData(edges)} />
