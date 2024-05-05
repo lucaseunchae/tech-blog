@@ -23,7 +23,7 @@ export default function ({
   title,
 }: PostTempleteProps) {
   return (
-    <div className='center-content !max-w-3xl relative'>
+    <div className='center-content relative'>
       <PostInfoSection title={title} date={date} tags={tags} />
       {tableOfContents && <TableOfContents tableOfContents={tableOfContents} />}
       <MarkdownSection content={content} />
