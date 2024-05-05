@@ -3,10 +3,12 @@ import { ReactNode } from 'react'
 import MarkdownSection from './markdown-section'
 import PostInfoSection from './post-info-section'
 import TableOfContents from './table-of-contents'
+import UtterancesComments from './utterances-comments'
 
 export interface PostTempleteProps {
   content: string | ReactNode
   tableOfContents?: string
+  activeComments?: boolean
   date: string
   tags: string[]
   title: string
@@ -15,6 +17,7 @@ export interface PostTempleteProps {
 export default function ({
   content,
   tableOfContents,
+  activeComments = true,
   date,
   tags,
   title,
@@ -24,6 +27,7 @@ export default function ({
       <PostInfoSection title={title} date={date} tags={tags} />
       {tableOfContents && <TableOfContents tableOfContents={tableOfContents} />}
       <MarkdownSection content={content} />
+      {activeComments && <UtterancesComments />}
     </div>
   )
 }

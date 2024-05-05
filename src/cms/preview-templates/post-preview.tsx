@@ -12,6 +12,7 @@ export default function PostPreview({
     <div className='py-12 px-6'>
       <PostTemplate
         content={widgetFor('body') ?? <></>}
+        activeComments={false}
         date={new Date(data.date).toLocaleDateString()}
         tags={data.tags || []}
         title={data.title}
