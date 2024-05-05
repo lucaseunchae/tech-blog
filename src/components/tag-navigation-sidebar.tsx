@@ -42,7 +42,7 @@ export default function () {
           </h5>
           <ul>
             {group.map(({ tag, totalCount }) => (
-              <TagNavigationItem tag={tag} totalCount={totalCount} />
+              <TagNavigationItem key={tag} tag={tag} totalCount={totalCount} />
             ))}
           </ul>
         </div>
