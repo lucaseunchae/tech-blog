@@ -1,4 +1,4 @@
-import PostTemplate from '../../components/posts/post-template'
+import PostTemplate from '../../components/posts/post-templete'
 
 export default function PostPreview({
   entry,

@@ -1,5 +1,5 @@
 import { PostListItemProps } from 'components/posts/post-list-item'
-import { PostTempleteProps } from 'components/posts/post-template'
+import { PostTempleteProps } from 'components/posts/post-templete'
 
 export const processPostListData = (
   edges: ReadonlyArray<Queries.PostListItemFragment>

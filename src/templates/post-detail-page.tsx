@@ -1,4 +1,4 @@
-import PostTemplate from 'components/posts/post-template'
+import PostTemplate from 'components/posts/post-templete'
 import Layout from 'components/widgets/layout'
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { processPostTempleteData } from 'helpers/processQueryData'
