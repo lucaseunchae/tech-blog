@@ -1,6 +1,4 @@
-import PaginationBar from 'components/pagination-bar'
-import PostList from 'components/posts/post-list'
-import TagNavigationSidebar from 'components/tag-navigation-sidebar'
+import PostListView from 'components/posts/post-list-view'
 import Layout from 'components/widgets/layout'
 import { graphql, PageProps } from 'gatsby'
 import { processPostListData } from 'helpers/processQueryData'
@@ -21,12 +19,11 @@ export default function ({
           className='w-full h-full object-cover'
         />
       </div>
-      <TagNavigationSidebar />
-      <div className='center-content'>
-        <h1 className='page-title'>Posts({pageContext.totalElements})</h1>
-        <PostList posts={processPostListData(edges)} />
-        <PaginationBar {...pageContext} />
-      </div>
+      <PostListView
+        posts={processPostListData(edges)}
+        pageContext={pageContext}
+        title='Posts'
+      />
     </Layout>
   )
 }
