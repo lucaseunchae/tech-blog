@@ -31,7 +31,7 @@ export default function ({
 }
 
 export function Head() {
-  return <title>{generatePageTitle('Home')}</title>
+  return <title>{generatePageTitle()}</title>
 }
 
 export const query = graphql`

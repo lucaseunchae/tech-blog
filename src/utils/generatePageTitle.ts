@@ -1,3 +1,4 @@
-export default function (prefix: string) {
-  return `${prefix} | eunchae.blog`
+export default function (prefix?: string) {
+  const blogName = 'eunchae.blog'
+  return prefix ? `${prefix} | ${blogName}` : blogName
 }
