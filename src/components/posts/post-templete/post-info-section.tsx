@@ -1,5 +1,6 @@
 import { PostTempleteProps } from 'components/posts/post-templete'
 import dayjs from 'dayjs'
+import { Link } from 'gatsby'
 
 export default function ({
   title,
@@ -16,9 +17,11 @@ export default function ({
         {tags.map((tag, idx) => (
           <li
             key={idx}
-            className='px-2.5 py-1 rounded-xl bg-indigo-100 font-semibold text-indigo-600'
+            className='rounded-xl bg-indigo-100 hover:bg-indigo-200 font-semibold text-indigo-600'
           >
-            {tag}
+            <Link to={`/tags/${tag}`} className='inline-block px-2.5 py-1'>
+              {tag}
+            </Link>
           </li>
         ))}
       </ul>
