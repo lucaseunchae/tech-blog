@@ -5,7 +5,15 @@ import RightArrowIcon from 'components/icons/right-arrow-icon'
 import { navigate } from 'gatsby'
 import { PaginationContext } from 'model/utils'
 
-export default function ({ totalPages, currentPage }: PaginationContext) {
+type PaginationBarProps = PaginationContext & {
+  baseUrl: string
+}
+
+export default function ({
+  totalPages,
+  currentPage,
+  baseUrl,
+}: PaginationBarProps) {
   const PAGE_ITEM_COUNT = 5 // [6] [7] [8] [9] [10] 과 같이 PaginationBar가 보여줄 page item의 수
   const startPage =
     PAGE_ITEM_COUNT * Math.floor(currentPage / (PAGE_ITEM_COUNT + 1)) + 1
@@ -17,7 +25,7 @@ export default function ({ totalPages, currentPage }: PaginationContext) {
     if (event.currentTarget.disabled) {
       return
     }
-    navigate('/posts')
+    navigate(baseUrl)
   }
   function handleClickLeftArrowButton(
     event: React.MouseEvent<HTMLButtonElement>
@@ -25,7 +33,7 @@ export default function ({ totalPages, currentPage }: PaginationContext) {
     if (event.currentTarget.disabled) {
       return
     }
-    navigate(`/posts/${startPage - 1}`)
+    navigate(`${baseUrl}/${startPage - 1}`)
   }
   function handleClickPageNumberButton(
     event: React.MouseEvent<HTMLButtonElement>,
@@ -34,7 +42,7 @@ export default function ({ totalPages, currentPage }: PaginationContext) {
     if (event.currentTarget.disabled) {
       return
     }
-    navigate(`/posts/${pageNumber === 1 ? '' : pageNumber}`)
+    navigate(`${baseUrl}/${pageNumber === 1 ? '' : pageNumber}`)
   }
   function handleClickRightArrowButton(
     event: React.MouseEvent<HTMLButtonElement>
@@ -42,7 +50,7 @@ export default function ({ totalPages, currentPage }: PaginationContext) {
     if (event.currentTarget.disabled) {
       return
     }
-    navigate(`/posts/${startPage + PAGE_ITEM_COUNT}`)
+    navigate(`${baseUrl}/${startPage + PAGE_ITEM_COUNT}`)
   }
   function handleClickDoubleRightArrowButton(
     event: React.MouseEvent<HTMLButtonElement>
@@ -50,7 +58,7 @@ export default function ({ totalPages, currentPage }: PaginationContext) {
     if (event.currentTarget.disabled) {
       return
     }
-    navigate(`/posts/${totalPages}`)
+    navigate(`${baseUrl}/${totalPages}`)
   }
 
   const moveButtonClassName =

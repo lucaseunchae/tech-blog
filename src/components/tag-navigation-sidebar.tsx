@@ -10,6 +10,7 @@ function TagNavigationItem({
         to={`/tags/${tag}`}
         className='hover:text-indigo-700'
         activeClassName='text-indigo-700 font-semibold'
+        partiallyActive={true}
       >
         {tag} ({totalCount})
       </Link>

@@ -8,9 +8,10 @@ interface PostListViewProps {
   posts: PostListItemProps[]
   pageContext: PaginationContext
   title: string
+  baseUrl: string
 }
 
-export default function ({ posts, pageContext, title }: PostListViewProps) {
+export default function ({ posts, pageContext, title, baseUrl }: PostListViewProps) {
   return (
     <>
       <TagNavigationSidebar />
@@ -19,7 +20,7 @@ export default function ({ posts, pageContext, title }: PostListViewProps) {
           {title}({pageContext.totalElements})
         </h1>
         <PostList posts={posts} />
-        <PaginationBar {...pageContext} />
+        <PaginationBar {...pageContext} baseUrl={baseUrl} />
       </div>
     </>
   )

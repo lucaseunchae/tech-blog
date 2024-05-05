@@ -23,6 +23,7 @@ export default function ({
         posts={processPostListData(edges)}
         pageContext={pageContext}
         title='Posts'
+        baseUrl='/posts'
       />
     </Layout>
   )
