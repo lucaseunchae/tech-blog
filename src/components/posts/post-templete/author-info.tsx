@@ -1,6 +1,7 @@
-import GithubLogoIcon from 'components/icons/github-logo-icon'
-import MailIcon from 'components/icons/mail-icon'
 import { StaticImage } from 'gatsby-plugin-image'
+
+import GithubLogoIcon from '../../icons/github-logo-icon'
+import MailIcon from '../../icons/mail-icon'
 
 export default function () {
   return (
