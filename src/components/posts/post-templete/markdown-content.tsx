@@ -1,17 +1,17 @@
 import { PostTempleteProps } from 'components/posts/post-templete'
 
 export default function ({ content }: Pick<PostTempleteProps, 'content'>) {
-  const markdownSectionClassName =
+  const markdownContentClassName =
     'markdown prose prose-lg max-w-none prose-slate prose-code:before:hidden prose-code:after:hidden'
   return (
     <>
       {typeof content === 'string' ? (
         <div
-          className={markdownSectionClassName}
+          className={markdownContentClassName}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       ) : (
-        <div className={markdownSectionClassName}>{content}</div>
+        <div className={markdownContentClassName}>{content}</div>
       )}
     </>
   )

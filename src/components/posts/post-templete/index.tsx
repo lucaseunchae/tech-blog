@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 
-import AuthorIntroductionSection from './author-introduction-section'
-import MarkdownSection from './markdown-section'
-import PostInfoSection from './post-info-section'
+import AuthorInfo from './author-info'
+import MarkdownContent from './markdown-content'
+import PostComments from './post-comments'
+import PostInfo from './post-info'
 import TableOfContents from './table-of-contents'
-import UtterancesComments from './utterances-comments'
 
 export interface PostTempleteProps {
   content: string | ReactNode
@@ -25,11 +25,11 @@ export default function ({
 }: PostTempleteProps) {
   return (
     <div className='center-content relative'>
-      <PostInfoSection title={title} date={date} tags={tags} />
+      <PostInfo title={title} date={date} tags={tags} />
       {tableOfContents && <TableOfContents tableOfContents={tableOfContents} />}
-      <MarkdownSection content={content} />
-      <AuthorIntroductionSection />
-      {activeComments && <UtterancesComments />}
+      <MarkdownContent content={content} />
+      <AuthorInfo />
+      {activeComments && <PostComments />}
     </div>
   )
 }
