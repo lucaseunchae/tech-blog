@@ -23,6 +23,7 @@ export default function ({
       <Link to={slug} className='flex gap-x-5 md:gap-x-8 w-full py-4 md:py-8'>
         <img
           src={img}
+          alt={`${title} post image`}
           className='w-24 md:w-52 rounded-lg aspect-square object-cover'
         />
 
