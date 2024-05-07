@@ -1,9 +1,9 @@
 import PostListView from 'components/posts/post-list-view'
 import Layout from 'components/widgets/layout'
 import { graphql, PageProps } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { processPostListData } from 'helpers/processQueryData'
 import { PaginationContext } from 'model/utils'
-import generatePageTitle from 'utils/generatePageTitle'
 
 export default function ({
   data: {
@@ -13,12 +13,11 @@ export default function ({
 }: PageProps<Queries.HomePageQuery, PaginationContext>) {
   return (
     <Layout>
-      <div className='relative flex justify-center items-center w-full h-[320px] sm:h-[560px]'>
-        <img
-          src='images/banner-image.jpg'
-          className='w-full h-full object-cover'
-        />
-      </div>
+      <StaticImage
+        src='../images/banner.jpg'
+        alt='banner image'
+        className='w-full h-[320px] sm:h-[560px] object-cover'
+      />
       <PostListView
         posts={processPostListData(edges)}
         pageContext={pageContext}
@@ -27,10 +26,6 @@ export default function ({
       />
     </Layout>
   )
-}
-
-export function Head() {
-  return <title>{generatePageTitle()}</title>
 }
 
 export const query = graphql`
