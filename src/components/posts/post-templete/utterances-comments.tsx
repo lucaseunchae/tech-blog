@@ -25,7 +25,7 @@ export default function () {
   }, [])
 
   return (
-    <div className='mt-32 pt-5 border-t border-solid'>
+    <div className='pt-5 border-t border-solid'>
       <span className='text-xl font-semibold text-gray-600'>댓글 남기기</span>
       <div ref={ref} className='mt-5' />
     </div>

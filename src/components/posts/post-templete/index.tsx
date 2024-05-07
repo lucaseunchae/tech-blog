@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 
+import AuthorIntroductionSection from './author-introduction-section'
 import MarkdownSection from './markdown-section'
 import PostInfoSection from './post-info-section'
 import TableOfContents from './table-of-contents'
@@ -27,6 +28,7 @@ export default function ({
       <PostInfoSection title={title} date={date} tags={tags} />
       {tableOfContents && <TableOfContents tableOfContents={tableOfContents} />}
       <MarkdownSection content={content} />
+      <AuthorIntroductionSection />
       {activeComments && <UtterancesComments />}
     </div>
   )
