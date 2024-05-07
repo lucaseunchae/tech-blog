@@ -31,10 +31,7 @@
   background: #676767;
 }
 
-@layer utilities {
-  .center-content {
-    @apply max-w-3xl mx-auto px-4 py-6 md:py-16;
-  }
+@layer components {
   .page-title {
     @apply text-2xl md:text-4xl font-bold mb-8 md:mb-14;
   }
@@ -43,9 +40,9 @@
   .table-of-contents {
     @apply absolute top-20 right-[-10px];
     /*
-    Tailwind로 hidden을 사용하면 DOM에 잡히지 않아서
-    TOC scroll event가 적용되지 않기에 media query로 구현
-    */
+      Tailwind로 hidden을 사용하면 DOM에 잡히지 않아서
+      TOC scroll event가 적용되지 않기에 media query로 구현
+      */
     @media (max-width: 1280px) {
       display: none;
     }
@@ -61,5 +58,11 @@
   }
   .table-of-contents a.active {
     @apply text-indigo-600 font-bold;
+  }
+}
+
+@layer utilities {
+  .center-content {
+    @apply max-w-3xl mx-auto px-4 py-6 md:py-16;
   }
 }
