@@ -4,6 +4,7 @@ import { graphql, PageProps } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { processPostListData } from 'helpers/processQueryData'
 import { PaginationContext } from 'model/utils'
+import generatePageTitle from 'utils/generatePageTitle'
 
 export default function ({
   data: {
@@ -26,6 +27,10 @@ export default function ({
       />
     </Layout>
   )
+}
+
+export function Head() {
+  return <title>{generatePageTitle()}</title>
 }
 
 export const query = graphql`
