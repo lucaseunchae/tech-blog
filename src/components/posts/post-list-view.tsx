@@ -1,6 +1,7 @@
 import PaginationBar from 'components/pagination-bar'
 import PostList from 'components/posts/post-list'
 import { PostListItemProps } from 'components/posts/post-list-item'
+import TagNavigationButtons from 'components/tag-navigation-buttons'
 import TagNavigationSidebar from 'components/tag-navigation-sidebar'
 import { PaginationContext } from 'model/utils'
 
@@ -11,10 +12,16 @@ interface PostListViewProps {
   baseUrl: string
 }
 
-export default function ({ posts, pageContext, title, baseUrl }: PostListViewProps) {
+export default function ({
+  posts,
+  pageContext,
+  title,
+  baseUrl,
+}: PostListViewProps) {
   return (
     <>
-      <TagNavigationSidebar />
+      <TagNavigationSidebar className='hidden xl:block' />
+      <TagNavigationButtons className='block xl:hidden' />
       <div className='center-content'>
         <h1 className='page-title'>
           {title}({pageContext.totalElements})

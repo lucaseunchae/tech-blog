@@ -15,11 +15,11 @@ export default function ({
       </time>
       <ul className='flex gap-3 flex-wrap'>
         {tags.map((tag, idx) => (
-          <li
-            key={idx}
-            className='rounded-xl bg-indigo-100 hover:bg-indigo-200 font-semibold text-indigo-600'
-          >
-            <Link to={`/tags/${tag}`} className='inline-block px-2.5 py-1'>
+          <li key={idx}>
+            <Link
+              to={`/tags/${tag}`}
+              className='tag-chip'
+            >
               {tag}
             </Link>
           </li>

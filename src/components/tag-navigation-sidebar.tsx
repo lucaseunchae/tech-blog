@@ -1,4 +1,5 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
+import useTagMetaDataQuery from 'hooks/query/useTagMetaDataQuery'
 
 function TagNavigationItem({
   tag,
@@ -18,24 +19,13 @@ function TagNavigationItem({
   )
 }
 
-const query = graphql`
-  query TagMetaData {
-    allMarkdownRemark(sort: { frontmatter: { tags: DESC } }) {
-      group(field: { frontmatter: { tags: SELECT } }) {
-        tag: fieldValue
-        totalCount
-      }
-    }
-  }
-`
-
-export default function () {
+export default function ({ className }: { className?: string }) {
   const {
     allMarkdownRemark: { group },
-  } = useStaticQuery<Queries.TagMetaDataQuery>(query)
+  } = useTagMetaDataQuery()
 
   return (
-    <div className='hidden xl:block sticky top-0'>
+    <div className={`sticky top-0 ${className}`}>
       <div className='absolute top-0 left-0 flex flex-col justify-center w-52 h-screen py-[--md-header-height] border-r border-solid border-gray-100'>
         <div className='overflow-y-auto h-[90%] px-6'>
           <h5 className='mb-4 text-lg font-semibold text-gray-700 pb-2 border-b-2 border-solid border-gray-500'>

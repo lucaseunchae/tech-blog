@@ -36,6 +36,10 @@
     @apply text-2xl md:text-4xl font-bold mb-8 md:mb-14;
   }
 
+  .tag-chip {
+    @apply inline-block rounded-xl px-2.5 py-1 bg-indigo-100 hover:bg-indigo-200 font-semibold text-indigo-600;
+  }
+
   /* TOC */
   .table-of-contents {
     @apply absolute top-20 right-[-10px];
