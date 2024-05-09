@@ -11,13 +11,6 @@ export default function () {
       </Link>
       <nav className='flex w-max h-full text-md md:text-lg text-slate-500'>
         <Link
-          to='/about'
-          className='flex items-center h-full px-4 md:px-8 hover:text-black'
-          activeClassName='text-black font-medium'
-        >
-          About
-        </Link>
-        <Link
           to='/posts'
           className='flex items-center h-full px-4 md:px-8 hover:text-black'
           activeClassName='text-black font-medium'
