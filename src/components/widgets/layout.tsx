@@ -31,9 +31,9 @@ export default function ({ children }: { children: ReactNode }) {
     }
   }, [])
   return (
-    <div className='pt-[--header-height] md:pt-[--md-header-height] text-slate-950 transition-all'>
+    <div className='flex flex-col min-h-screen pt-[--header-height] md:pt-[--md-header-height] text-slate-950 transition-all'>
       <Header />
-      <main>{children}</main>
+      <main className='grow'>{children}</main>
       <Footer />
     </div>
   )

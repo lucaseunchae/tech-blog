@@ -25,7 +25,7 @@ export default function ({ className }: { className?: string }) {
   } = useTagMetaDataQuery()
 
   return (
-    <div className={`sticky top-0 ${className}`}>
+    <div className={`sticky top-0 ${className}`} style={{ contain: 'layout' }}>
       <div className='absolute top-0 left-0 flex flex-col justify-center w-52 h-screen py-[--md-header-height] border-r border-solid border-gray-100'>
         <div className='overflow-y-auto h-[90%] px-6'>
           <h5 className='mb-4 text-lg font-semibold text-gray-700 pb-2 border-b-2 border-solid border-gray-500'>
