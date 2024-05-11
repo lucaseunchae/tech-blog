@@ -6,7 +6,7 @@ import Footer from './footer'
 import Header from './header'
 
 export default function ({ children }: { children: ReactNode }) {
-  useEffect(() => {
+  useEffect(function toggleHeaderOnScroll() {
     if (isMobileDevice()) return
 
     let previousScrollY = window.scrollY
