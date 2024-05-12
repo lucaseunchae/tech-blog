@@ -1,8 +1,8 @@
 import PostListView from 'components/posts/post-list-view'
+import SEO from 'components/seo'
 import Layout from 'components/widgets/layout'
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { processPostListData } from 'helpers/processQueryData'
-import generatePageTitle from 'utils/generatePageTitle'
 
 import { TagPostsPageContext } from '../../gatsby-node'
 
@@ -27,7 +27,7 @@ export default function ({
 export function Head({
   pageContext: { tag },
 }: HeadProps<Queries.PostDetailPageQuery, TagPostsPageContext>) {
-  return <title>{generatePageTitle(tag)}</title>
+  return <SEO title={tag} />
 }
 
 export const query = graphql`

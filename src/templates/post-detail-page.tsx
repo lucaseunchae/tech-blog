@@ -1,10 +1,10 @@
 import PostTemplate from 'components/posts/post-templete'
+import SEO from 'components/seo'
 import Layout from 'components/widgets/layout'
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { processPostTempleteData } from 'helpers/processQueryData'
 import throttle from 'lodash.throttle'
 import { useEffect } from 'react'
-import generatePageTitle from 'utils/generatePageTitle'
 
 export default function ({
   data: { markdownRemark: post },
@@ -45,8 +45,12 @@ export default function ({
 }
 
 export function Head({ data }: HeadProps<Queries.PostDetailPageQuery>) {
-  const postTitle = data.markdownRemark!.frontmatter!.title!
-  return <title>{generatePageTitle(postTitle)}</title>
+  const { title, description, featuredimage } =
+    data.markdownRemark!.frontmatter!
+
+  return (
+    <SEO title={title!} description={description!} image={featuredimage!} />
+  )
 }
 
 export const query = graphql`
@@ -59,6 +63,7 @@ export const query = graphql`
         title
         description
         tags
+        featuredimage
       }
       tableOfContents
     }

@@ -1,10 +1,10 @@
 import PostListView from 'components/posts/post-list-view'
+import SEO from 'components/seo'
 import Layout from 'components/widgets/layout'
 import { graphql, PageProps } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { processPostListData } from 'helpers/processQueryData'
 import { PaginationContext } from 'model/utils'
-import generatePageTitle from 'utils/generatePageTitle'
 
 export default function ({
   data: {
@@ -30,7 +30,7 @@ export default function ({
 }
 
 export function Head() {
-  return <title>{generatePageTitle()}</title>
+  return <SEO />
 }
 
 export const query = graphql`
