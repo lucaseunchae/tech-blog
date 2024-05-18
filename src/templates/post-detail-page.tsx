@@ -6,33 +6,34 @@ import { processPostTempleteData } from 'helpers/processQueryData'
 import throttle from 'lodash.throttle'
 import { useEffect } from 'react'
 
+const hightlightTopTocLink = () => {
+  const allTocLinks = document.querySelectorAll('.table-of-contents a')
+  allTocLinks.forEach((link) => {
+    link.classList.remove('active')
+  })
+
+  const headers = Array.from(
+    document.querySelectorAll('h2, h3, h4, h5, h6')
+  ).filter((header) => header.getBoundingClientRect().y < 100)
+  
+  if (headers.length < 1) {
+    return
+  }
+
+  const topTocLink = document.querySelector(
+    `.table-of-contents a[href='#${encodeURI(headers[headers.length - 1].id)}']`
+  )
+  topTocLink?.classList.add('active')
+}
+
 export default function PostDetailPage({
   data: { markdownRemark: post },
 }: PageProps<Queries.PostDetailPageQuery>) {
   useEffect(() => {
-    const handleScroll = throttle(() => {
-      const allTocLinks = document.querySelectorAll('.table-of-contents a')
-      const headers = document.querySelectorAll('h2, h3, h4, h5, h6')
+    hightlightTopTocLink()
 
-      headers.forEach((header) => {
-        const headerY = header.getBoundingClientRect().y
-
-        if (headerY > 100) return
-
-        const tocLink = document.querySelector(
-          `.table-of-contents a[href='#${encodeURI(header.id)}']`
-        )
-
-        allTocLinks.forEach((link) => {
-          link.classList.remove('active')
-        })
-
-        tocLink?.classList.add('active')
-      })
-    }, 200)
-
+    const handleScroll = throttle(hightlightTopTocLink, 200)
     document.addEventListener('scroll', handleScroll)
-
     return () => {
       document.removeEventListener('scroll', handleScroll)
     }
