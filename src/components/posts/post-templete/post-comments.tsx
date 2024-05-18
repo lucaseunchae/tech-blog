@@ -7,12 +7,21 @@ export default function PostComments() {
     const script = document.createElement('script')
 
     const config = {
-      src: 'https://utteranc.es/client.js',
+      src: 'https://giscus.app/client.js',
       repo: 'lucaseunchae/tech-blog-comments',
-      'issue-term': 'title',
-      theme: 'github-light',
-      crossOrigin: 'anonymous',
-      async: 'true',
+      'data-repo': 'lucaseunchae/tech-blog-comments',
+      'data-repo-id': 'R_kgDOL3ThyQ',
+      'data-category': 'Comments',
+      'data-category-id': 'DIC_kwDOL3Thyc4Cfc0r',
+      'data-mapping': 'pathname',
+      'data-strict': '0',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-input-position': 'top',
+      'data-theme': 'light_protanopia',
+      'data-lang': 'ko',
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
     }
 
     Object.entries(config).forEach(([key, value]) => {
@@ -24,10 +33,5 @@ export default function PostComments() {
     }, 300)
   }, [])
 
-  return (
-    <div className='pt-5 border-t border-solid'>
-      <span className='text-xl font-semibold text-gray-600'>댓글 남기기</span>
-      <div ref={ref} className='mt-5' />
-    </div>
-  )
+  return <div ref={ref} className='pt-10 border-t border-solid' />
 }
