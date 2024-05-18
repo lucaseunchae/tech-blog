@@ -5,7 +5,7 @@ import { graphql, PageProps } from 'gatsby'
 import { processPostListData } from 'helpers/processQueryData'
 import { PaginationContext } from 'model/utils'
 
-export default function ({
+export default function PostsPage({
   data: {
     allMarkdownRemark: { edges },
   },

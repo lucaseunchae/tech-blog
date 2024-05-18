@@ -9,7 +9,7 @@ interface SEOProps {
   image?: string
 }
 
-export default function ({
+export default function SEO({
   title,
   description = '웹 프론트엔드 기술 블로그입니다.',
   image = '/images/icon.png',

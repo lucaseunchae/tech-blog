@@ -6,7 +6,7 @@ import { processPostTempleteData } from 'helpers/processQueryData'
 import throttle from 'lodash.throttle'
 import { useEffect } from 'react'
 
-export default function ({
+export default function PostDetailPage({
   data: { markdownRemark: post },
 }: PageProps<Queries.PostDetailPageQuery>) {
   useEffect(() => {

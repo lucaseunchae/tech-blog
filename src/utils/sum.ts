@@ -1,4 +1,4 @@
-export default function (arr: number[]) {
+export default function sum(arr: number[]) {
   let result = 0
 
   arr.forEach((num) => {

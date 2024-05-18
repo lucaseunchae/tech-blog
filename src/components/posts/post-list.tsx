@@ -6,7 +6,7 @@ export interface PostListProps {
   posts: PostListItemProps[]
 }
 
-export default function ({ posts }: PostListProps) {
+export default function PostList({ posts }: PostListProps) {
   return (
     <ul className='flex flex-col'>
       {posts.map((post) => (

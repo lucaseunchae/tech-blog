@@ -6,7 +6,7 @@ import { processPostListData } from 'helpers/processQueryData'
 
 import { TagPostsPageContext } from '../../gatsby-node'
 
-export default function ({
+export default function TagPostsPage({
   data: {
     allMarkdownRemark: { edges },
   },

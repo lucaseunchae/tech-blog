@@ -11,7 +11,7 @@ interface PostListViewProps {
   baseUrl: string
 }
 
-export default function ({
+export default function PostListView({
   posts,
   pageContext,
   title,

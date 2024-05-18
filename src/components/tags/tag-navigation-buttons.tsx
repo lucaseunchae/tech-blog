@@ -19,7 +19,11 @@ function TagNavigationButton({
   )
 }
 
-export default function ({ className }: { className?: string }) {
+export default function TagNavigationButtons({
+  className,
+}: {
+  className?: string
+}) {
   const {
     allMarkdownRemark: { group },
   } = useTagMetaDataQuery()

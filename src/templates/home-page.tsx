@@ -6,7 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { processPostListData } from 'helpers/processQueryData'
 import { PaginationContext } from 'model/utils'
 
-export default function ({
+export default function HomePage({
   data: {
     allMarkdownRemark: { edges },
   },

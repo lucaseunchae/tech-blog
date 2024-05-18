@@ -10,7 +10,7 @@ export interface PostListItemProps {
   tags: string[]
 }
 
-export default function ({
+export default function PostListItem({
   img,
   slug,
   title,

@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import GithubLogoIcon from '../../icons/github-logo-icon'
 import MailIcon from '../../icons/mail-icon'
 
-export default function () {
+export default function AuthorInfo() {
   return (
     <div className='flex items-center gap-2 mt-28 py-8'>
       <StaticImage

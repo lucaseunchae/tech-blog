@@ -5,7 +5,7 @@ import isMobileDevice from 'utils/isMobileDevice'
 import Footer from './footer'
 import Header from './header'
 
-export default function ({ children }: { children: ReactNode }) {
+export default function Layout({ children }: { children: ReactNode }) {
   useEffect(function toggleHeaderOnScroll() {
     if (isMobileDevice()) return
 

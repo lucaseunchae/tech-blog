@@ -2,7 +2,7 @@ import { PostTempleteProps } from 'components/posts/post-templete'
 import dayjs from 'dayjs'
 import { Link } from 'gatsby'
 
-export default function ({
+export default function PostInfo({
   title,
   date,
   tags,
@@ -16,10 +16,7 @@ export default function ({
       <ul className='flex gap-3 flex-wrap'>
         {tags.map((tag, idx) => (
           <li key={idx}>
-            <Link
-              to={`/tags/${tag}`}
-              className='tag-chip'
-            >
+            <Link to={`/tags/${tag}`} className='tag-chip'>
               {tag}
             </Link>
           </li>

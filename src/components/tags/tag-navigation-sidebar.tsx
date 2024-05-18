@@ -19,7 +19,11 @@ function TagNavigationItem({
   )
 }
 
-export default function ({ className }: { className?: string }) {
+export default function TagNavigationSidebar({
+  className,
+}: {
+  className?: string
+}) {
   const {
     allMarkdownRemark: { group },
   } = useTagMetaDataQuery()

@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 
-export default function () {
+export default function Header() {
   return (
     <header className='z-10 fixed top-0 flex items-center justify-between w-full h-[--header-height] md:h-[--md-header-height] border-b border-solid border-gray-200 bg-white transition-all duration-700'>
       <Link

@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-export default function () {
+export default function useTagMetaDataQuery() {
   const query = graphql`
     query TagMetaData {
       allMarkdownRemark(sort: { frontmatter: { tags: DESC } }) {
@@ -11,6 +11,6 @@ export default function () {
       }
     }
   `
-  
+
   return useStaticQuery<Queries.TagMetaDataQuery>(query)
 }

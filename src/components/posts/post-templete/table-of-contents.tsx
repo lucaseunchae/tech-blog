@@ -1,6 +1,6 @@
 import { PostTempleteProps } from 'components/posts/post-templete'
 
-export default function ({
+export default function TableOfContents({
   tableOfContents,
 }: Pick<PostTempleteProps, 'tableOfContents'>) {
   return (

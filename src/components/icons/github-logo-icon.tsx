@@ -1,4 +1,6 @@
-export default function ({ ...props }: React.SVGAttributes<SVGSVGElement>) {
+export default function GithubLogoIcon({
+  ...props
+}: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       width='98'

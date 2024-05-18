@@ -9,7 +9,7 @@ type PaginationBarProps = PaginationContext & {
   baseUrl: string
 }
 
-export default function ({
+export default function PaginationBar({
   totalPages,
   currentPage,
   baseUrl,

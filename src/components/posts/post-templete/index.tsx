@@ -15,7 +15,7 @@ export interface PostTempleteProps {
   title: string
 }
 
-export default function ({
+export default function PostTemplete({
   content,
   tableOfContents,
   activeComments = true,

@@ -1,4 +1,6 @@
-export default function ({ ...props }: React.SVGAttributes<SVGSVGElement>) {
+export default function DoubleRightArrowIcon({
+  ...props
+}: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
