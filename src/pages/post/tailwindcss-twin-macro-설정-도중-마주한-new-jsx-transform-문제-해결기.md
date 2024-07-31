@@ -20,9 +20,9 @@ const Input = ({ hasHover }) => (
 )
 ```
 
-위의 코드처럼 twin.macro를 통해 조건부 스타일 적용을 위해 emotion의 `css` 속성을 사용해야 했습니다. 이를 위해 tailwind, emotion, twin.macro 패키지를 설치하고 설정하는 과정에서 React17에서 도입된 New JSX Transform 방식으로 인해 겪은 문제점과 이를 해결하고 적용한 방식을 공유하고자 합니다.
+위의 코드처럼 twin.macro를 통해 조건부 스타일 적용을 위해 emotion의 `css` 속성을 사용해야 했습니다. tailwind, emotion, twin.macro 패키지를 설치하고 설정하는 과정에서 React17에서 도입된 New JSX Transform 방식으로 인해 겪은 문제점과 이를 해결하고 적용한 방식을 공유하고자 합니다.
 
-### 개발 환경
+**개발 환경**
 
 | 이름             | 버전      |
 | -------------- | ------- |
@@ -34,9 +34,13 @@ const Input = ({ hasHover }) => (
 | Node           | 20.15.1 |
 | Vite           | 5.3.4   |
 
+<br/>
+
 ## TailwindCSS 설정
 
 [Install Tailwind CSS with Vite](https://tailwindcss.com/docs/guides/vite) 공식문서를 따라서 tailwind와 관련 패키지를 설치하고 관련 설정을 구성했습니다.
+
+<br/>
 
 ## twin.macro 공식문서 설치 과정에서 겪은 문제점
 
@@ -82,13 +86,15 @@ export default App;
 
 물론 위와 같이 `React` 를 import하면 twin.macro와 emotion의 `css` 속성도 잘 작동했지만, 최신 버전의 리액트에서 `React` 를 항상 import 해야하는 문제점이 남아있었습니다.
 
+<br/>
+
 ## New JSX Transform 방식에 맞게 설정 변경
 
 우선 기존 twin.macro의 [vite-emotion-typescript 설치 가이드](https://github.com/ben-rogerson/twin.examples/tree/master/vite-emotion-typescript)에서 설치했던 babel 플러그인에 대해 살펴보겠습니다. 
 
 emotion에서 JSX를 트랜스파일할 때 `css` 속성을 사용할 수 있도록 `@emotion/babel-plugin-jsx-pragmatic`**,** `@babel/plugin-transform-react-jsx` 두 플러그인을 사용 했습니다. 하지만 이 방식은 `React.createElement` 를 사용하는 이전 JSX Transform 방식이기 때문에 vite.config.ts의 설정과 패키지를 제거했습니다.
 
-[emotion 공식문서](https://emotion.sh/docs/css-prop)에서 `css` 속성을 사용하는 방법에 대해서 다루고 있는데,
+[emotion 공식문서](https://emotion.sh/docs/css-prop)에서 `css` 속성을 사용하는 방법에 대해서 다루고 있는데
 
 * Babel Preset
 * JSX Pragma
@@ -126,6 +132,8 @@ export default defineConfig({
 ```
 
 `jsxImportSource` 설정을 추가함으로써 jsx(tsx) 파일 내에서 `React`  import 없이 `css`  속성을 사용할 수 있게 되었습니다.
+
+<br/>
 
 ## 참고 자료
 
