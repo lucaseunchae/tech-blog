@@ -58,7 +58,7 @@ yarn add twin.macro @emotion/babel-plugin-jsx-pragmatic @babel/plugin-transform-
 에러 콘솔을 확인해본 결과, `App.tsx` 내부에서 에러가 발생했고  
 
 ```tsx
-// @emotion/react패키지 내부의 jsx.js
+// @emotion/react 패키지 내부의 jsx.js
 
 import * as React from 'react'
 
@@ -70,7 +70,7 @@ export const jsx /*: typeof React.createElement */ = function (
 
 `jsx.js`  패키지 내부에서  `creatElement` 가 사용되는것을 확인하고, 현재 설정으로는 이전 방식의 JSX Transform 방식이 적용되는것을 파악 했습니다.
 
-> React17 버전부터 도입된 New JSX Transform에 관한 내용은 [해당 공식 문서 글](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)에서 참고할 수 있습니다.
+*React17 버전부터 도입된 New JSX Transform에 관한 내용은 [해당 공식 문서 글](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)에서 참고할 수 있습니다.*
 
 ```tsx
 import React from 'react';
