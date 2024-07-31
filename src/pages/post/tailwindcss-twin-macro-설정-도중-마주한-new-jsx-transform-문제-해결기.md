@@ -8,7 +8,7 @@ tags:
   - jsx-transform
 date: 2024-07-31T11:43:06.702Z
 updated: 2024-07-31T11:43:06.713Z
-featuredimage: https://res.cloudinary.com/dyfdioouh/image/upload/f_auto,q_auto/c_auto,h_250,w_250/v1722427145/%EC%A0%9C%EB%AA%A9_%EC%97%86%EC%9D%8C_nums1a.png
+featuredimage: https://res.cloudinary.com/dyfdioouh/image/upload/f_auto,q_auto/c_auto,h_250,w_250/v1722428795/Y19wYWQsYXJfMTox_xjzwkl.png
 ---
 새 프로젝트를 초기 세팅하기 위해 여러 라이브러리와 함께 TailwindCSS(이하 tailwind), twin.macro 설정을 진행하고 있었습니다.
 
