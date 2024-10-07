@@ -4,7 +4,7 @@
 
 ![image](https://github.com/user-attachments/assets/4a3d6980-31d2-4472-bb62-26c32681d1f3)
 
-/admin 내의 웹 에디터에서 게시글을 작성하는 이미지
+<p align="center">"/admin" URL 내부 웹 에디터에서 게시글을 작성하는 이미지</p>
 
 # **프로젝트 구조**
 
