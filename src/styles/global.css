@@ -57,7 +57,7 @@
     }
 
     a {
-      @apply text-gray-400 leading-8;
+      @apply text-gray-400 leading-8 line-clamp-1;
     }
     a.active {
       @apply text-indigo-600 font-bold;
