@@ -7,7 +7,7 @@ tags:
   - lint-staged
 date: 2024-10-09T12:59:30.886Z
 updated: 2024-10-09T12:59:30.897Z
-featuredimage: https://res.cloudinary.com/dyfdioouh/image/upload/f_auto,q_auto/c_auto,h_250,w_250/v1728478928/%EA%B7%B8%EB%A6%BC2_xatx1u.png
+featuredimage: https://res.cloudinary.com/dyfdioouh/image/upload/c_pad,ar_1:1/f_auto,q_auto/c_auto,h_250,w_250/v1728478928/%EA%B7%B8%EB%A6%BC2_xatx1u.png
 ---
 사이드 프로젝트 진행 중 문제점을 겪고 lint, 타입 체크를 자동화한 과정에 대해 공유하려고 합니다.
 
